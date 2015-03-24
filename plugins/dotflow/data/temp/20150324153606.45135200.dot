@@ -1,5 +1,4 @@
-digraph g {
-	A1 -> B1
-	A2 -> B2
-	A3 -> B3->c
-}
+graph graphname {
+     a -- b -- c;
+     b -- d;
+ }

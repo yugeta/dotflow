@@ -6,7 +6,7 @@
 class dotflow{
 
 	public $tempDir = "plugins/dotflow/data/temp/";
-	public $dot = "/usr/local/bin/dot";
+	public $dot     = "/usr/local/bin/dot";
 
 	//textarea
 	function getFlow(){
@@ -16,6 +16,15 @@ class dotflow{
 		if(is_file($path.$uuid.".dot")){
 			return file_get_contents($path.$uuid.".dot");
 		}
+	}
+
+	//install-check
+	function checkDot(){
+		unset($res);
+		exec($this->dot." -V 2>&1",$res);
+		//print_r($res);exit();
+		//if(!count($res)){return true;}
+		if(preg_match("/version/",$res[0])){return true;}
 	}
 
 	//ajax
