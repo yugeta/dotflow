@@ -7,11 +7,30 @@
 <form method="post" name="form1">
 	<input type="hidden" name="mode" value="upload">
 	<input type="hidden" name="node" value="<%system:ymdhis%>">
+	<input type="hidden" name="uuid" value="<%class:dotflow:getUUID%>">
 
 	<div class="inputArea">
 		<textarea class="flow" name="flow"><%class:dotflow:getFlow%></textarea>
 	</div>
 </form>
 
+
+
 <h3>Preview</h3>
 <div id="preview"></div>
+
+
+<form method="post" name="form2">
+<h3>Download</h3>
+<div class="download">
+	<select name='fileType'>
+		<option name="png">png</option>
+		<option name="gif">gif</option>
+		<option name="jpg">jpg</option>
+		<option name="svg">svg</option>
+	</select>
+	<input type="button" value="DownLoad">
+</div>
+</form>
+
+<div class="footer-space"></div>
